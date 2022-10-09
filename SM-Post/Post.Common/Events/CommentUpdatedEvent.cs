@@ -2,9 +2,9 @@ using CQRS.Core.Events;
 
 namespace Post.Common.Events
 {
-  public class CommentUpdateEvent : BaseEvent
+  public class CommentUpdatedEvent : BaseEvent
   {
-    public CommentUpdateEvent() : base(nameof(CommentUpdateEvent))
+    public CommentUpdatedEvent() : base(nameof(CommentUpdatedEvent))
     {
     }
     public Guid CommentId { get; set; }
