@@ -20,7 +20,7 @@ namespace Post.Cmd.Domain.Aggregates
     {
       RaiseEvent(new PostCreatedEvent
       {
-        // Id = id,
+        Id = id,
         Author = author,
         Message = message,
         DatePosted = DateTime.Now
@@ -44,7 +44,7 @@ namespace Post.Cmd.Domain.Aggregates
       }
       RaiseEvent(new MessageUpdatedEvent
       {
-        // Id = _id,
+        Id = _id,
         Message = message
       });
     }
@@ -60,8 +60,7 @@ namespace Post.Cmd.Domain.Aggregates
       }
       RaiseEvent(new PostLikedEvent
       {
-        // Id = _id,
-        // Author = _author
+        Id = _id,
       });
     }
     public void Apply(PostLikedEvent @event)
@@ -85,7 +84,7 @@ namespace Post.Cmd.Domain.Aggregates
       var commentId = Guid.NewGuid();
       RaiseEvent(new CommentAddedEvent
       {
-        // Id = _id,
+        Id = _id,
         CommentId = commentId,
         Comment = comment,
         Username = username
@@ -120,7 +119,7 @@ namespace Post.Cmd.Domain.Aggregates
       }
       RaiseEvent(new CommentUpdatedEvent
       {
-        // Id = _id,
+        Id = _id,
         CommentId = commentId,
         Comment = comment,
         Username = username,
@@ -147,7 +146,7 @@ namespace Post.Cmd.Domain.Aggregates
       }
       RaiseEvent(new CommentRemovedEvent
       {
-        //  Id = _id,
+        Id = _id,
         CommentId = commentId
       });
     }
@@ -168,7 +167,7 @@ namespace Post.Cmd.Domain.Aggregates
       }
       RaiseEvent(new PostDeletedEvent
       {
-        // Id = _id,
+        Id = _id,
       });
     }
     public void Apply(PostDeletedEvent @event)
